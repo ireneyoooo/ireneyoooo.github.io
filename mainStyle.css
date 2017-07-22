@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+*	{
+		color: white;
+		font-weight: lighter;
+		font-family: 'Snell Roundhand', cursive;
+	}
+		
+		
+#content_wrapper	{
+					background-color: slateblue;
+					width: 1050px;
+					border: groove 5px;
+					padding: 15px;
+					margin: auto;
+					}			
+		
+h1		{
+			font-weight: bold;
+			font-family:'Apple Chancery' , cursive;
+		}		
+
+
+p{
+	font-family:'Jazz LET',fantasy;
+}
+
+
+#navigation ul		{
+					list-style-type: none;
+					text-align: center;
+					font-size: 1.5em;
+					}
+					
+#navigation li		{
+					display: inline;
+					margin-left: 20px;
+					margin-right: 20px;
+					}
+					
+#navigation a:hover	{
+					color: lightsalmon;
+					text-decoration: underline;
+					font-family:'Caflisch Script Pro' ,fantasy;
+					}
+					
+#navigation a		{
+					color: skyblue;
+					text-decoration: none;
+					font-family:'Caflisch Script Pro' ,fantasy;
+					}
+					
+#navigation			{		
+					background-color: thistle;
+					opacity: 0.75;			
+					}
+					
+.container 			{
+  					position: relative;
+ 					width: 50%;
+					}
+
+.image 				{
+ 					display: block;
+					width: 100%;
+					height: auto;	
+					}
+
+.overlay 			{
+ 					 position: absolute;
+ 					 top: 0;
+ 					 bottom: 0;
+ 					 left: 0;
+ 					 right: 0;
+ 					 height: 100%;
+ 					 width: 350px;
+ 					 opacity: 0;
+					 transition: .5s ease;
+ 					 background-color: white;
+					}
+
+.container:hover .overlay 	{
+							opacity: 0.5;
+							}
+
+.text 						{
+							  color: black;
+							  font-size: 20px;
+							  font-weight: bold;
+							  position: absolute;
+							  top: 50%;
+							  left: 50%;
+							  transform: translate(-50%, -50%);
+							  -ms-transform: translate(-50%, -50%);
+							}	
+
+#sketchpad {
+    float:left;
+    border:2px solid #888;
+    border-radius:4px;
+    position:relative;
+}						
+
+a:link			{
+    			color: skyblue; 
+  				background-color: transparent; 
+   				text-decoration: none;
+   				font-family:'Caflisch Script Pro' ,fantasy;
+				}
+
+a:visited 		{
+   				color: skyblue;
+    			background-color: transparent;
+  				text-decoration: none;
+  				font-family:'Caflisch Script Pro' ,fantasy;
+				}
+
+a:hover 		{
+  				color: lightsalmon;
+ 				background-color: transparent;
+  				text-decoration: underline;
+  				font-family:'Caflisch Script Pro' ,fantasy;
+				}
+
+		

@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>a mini portfolio(:</title>
+    <link rel="stylesheet" href="mainStyle.css">
+
+</head>
+<body>
+
+<div id="content_wrapper">
+
+<div id="navigation">
+<hr />
+<ul>
+    <li><a href=index.html>main page</a></li>
+    <li><a href=art.html>art</a></li>
+    <li><a href=photography.html>photography</a></li>
+    <li><a href=   >diy!</a></li>
+</ul>
+<hr />
+</div><!--closes navigation-->
+
+<center> <h1> draw something yourself!</h1> </center>
+
+<p>this canvas is inspired by <a href="https://zipso.net/a-simple-touchscreen-sketchpad-using-javascript-and-html5/"target=“_blank" >https://zipso.net/a-simple-touchscreen-sketchpad-using-javascript-and-html5/</a>.</p>
+
+<script type="text/javascript">
+    var canvas,ctx;
+    var mouseX,mouseY,mouseDown=0;
+    function drawDot(ctx,x,y,size) {
+        r=0; g=0; b=0; a=255;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI*2, true); 
+        ctx.closePath();
+        ctx.fill();
+    } 
+
+    function clearCanvas(canvas,ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function sketchpad_mouseDown() {
+        mouseDown=1;
+        drawDot(ctx,mouseX,mouseY,12);
+    }
+
+    function sketchpad_mouseUp() {
+        mouseDown=0;
+    }
+
+    function sketchpad_mouseMove(e) { 
+        getMousePos(e);
+
+        if (mouseDown==1) {
+            drawDot(ctx,mouseX,mouseY,12);
+        }
+    }
+
+    function getMousePos(e) {
+        if (!e)
+            var e = event;
+
+        if (e.offsetX) {
+            mouseX = e.offsetX;
+            mouseY = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX = e.layerX;
+            mouseY = e.layerY;
+        }
+     }
+
+
+    function init() {
+        canvas = document.getElementById('sketchpad');
+
+        if (canvas.getContext)
+            ctx = canvas.getContext('2d');
+
+        if (ctx) {
+            canvas.addEventListener('mousedown', sketchpad_mouseDown, false);
+            canvas.addEventListener('mousemove', sketchpad_mouseMove, false);
+            window.addEventListener('mouseup', sketchpad_mouseUp, false);
+        }
+    }
+</script>
+
+</head>
+
+<body onload="init()">
+    <div id="sketchpadapp">
+        <div class="leftside">
+             <input type="submit" value="Clear Sketchpad" onclick="clearCanvas(canvas,ctx);">
+        </div>
+        <div class="rightside">
+            <canvas id="sketchpad" height="300" width="1000">
+            </canvas>
+        </div>
+    </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p> thank you so much for visiting this site(-:</p>
+
+</body>
+</html>
